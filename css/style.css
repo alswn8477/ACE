@@ -1,11 +1,11 @@
-@import url();
+@charset "utf-8"
 @font-face {
   font-family: Metropolis;
-  src: url(./webfonts/Metropolis-Light.woff) format("woff");
+  src: url(../webfonts/Metropolis-Light.woff) format("woff");
 }
 @font-face {
   font-family: NotoSansKR;
-  src: url(./webfonts/NotoSansKR-Light.woff) format("woff");
+  src: url(../webfonts/NotoSansKR-Light.woff) format("woff");
 }
 * {
   margin: 0;
@@ -19,7 +19,8 @@ a {
   text-decoration: none;
 }
 header {
-  width: 100%;
+  /* width: 100%; */
+  padding: 0 80px;
 }
 header .top {
   width: 90%;
@@ -68,11 +69,15 @@ header .top ul li:nth-child(4) a {
 header .nav {
   width: 90%;
   padding: 20px 0 70px 0;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  position: relative;
+  background: #fff;
+  transition: 0.5s;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 10;
+  margin-bottom: 200px;
 }
 header .nav > a {
   position: absolute;
@@ -86,10 +91,10 @@ header .nav > div {
   align-items: flex-start;
   font-size: 16px;
 }
-header .nav > div > div {
+header .nav .left,
+header .nav .right {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  gap: 30px;
 }
 header .nav > div > div > div {
   display: flex;
@@ -102,19 +107,34 @@ header .nav div > div > a {
   display: inline-block;
   color: #333;
 }
+header .nav .one_dep {
+  position: relative;
+}
+header .nav .one_dep div a {
+  width: 100px;
+}
 header .nav .one_dep div a span:nth-child(2) {
-  opacity: 0.5;
+  display: none;
 }
 header .nav .two_dep {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  background: #fff;
+}
+header .nav .two_dep.on {
+  height: 150px;
 }
 
 .con {
-  width: 100%;
+  padding: 0 80px;
+  margin-top: 200px;
 }
 .con > p:nth-child(1) {
-  width: 90%;
   padding: 20px 0;
   box-sizing: border-box;
   margin: 0 auto;
@@ -126,9 +146,8 @@ header .nav .two_dep {
 }
 
 .con2 {
-  width: 90%;
-  padding: 20px 0;
-  margin: 0 auto;
+  width: 100%;
+  padding: 20px 80px;
   position: relative;
 }
 .con2 h1,
@@ -150,18 +169,27 @@ header .nav .two_dep {
   font-size: 16px;
   color: #666;
 }
+.con2 .inner {
+  display: flex;
+  height: 800px;
+  gap: 30px;
+}
+.con2 .inner .left,
+.con2 .inner .right {
+  flex: 1;
+}
+.con2 .inner .swiper {
+  width: 710px;
+  height: 100%;
+}
 .con2 .down {
   width: 100%;
   height: 800px;
   padding: 0 50px;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
-}
-.con2 .down div {
-  flex: 1;
 }
 .con2 .down .left {
   font-size: 16px;
@@ -177,6 +205,23 @@ header .nav .two_dep {
   color: #0890c0;
   font-size: 22px;
   font-weight: bold;
+}
+.con2 .down .swiper {
+  width: 710px;
+  height: 800px;
+}
+.con2 .down .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.con2 .down .swiper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .con2 .down > .center {
   width: 100%;
@@ -238,26 +283,24 @@ header .nav .two_dep {
 
 .con3 {
   width: 100%;
-  margin: 0 auto;
   position: relative;
   background: #f4f7fa;
 }
 .con3 .swiper {
   width: 100%;
 }
-.con3 .swiper-slide {
+.con3 .mySwiper1 .swiper-slide {
   text-align: center;
+  width: 1280px;
   font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.con3 .swiper-wrapper {
-  width: 100%;
-}
+
 .con3 .swiper-slide img {
   display: block;
-  height: 720px;
+  width: 100%;
   object-fit: cover;
 }
 
