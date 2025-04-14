@@ -340,3 +340,10 @@ header .nav .two_dep {
   justify-content: center;
   gap: 50px;
 }
+
+.con6 {
+  width: 100%;
+}
+.con6 img {
+  min-width: 100%;
+}
