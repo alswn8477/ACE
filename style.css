@@ -271,7 +271,7 @@ header .nav .two_dep {
   width: 1440px;
   margin: 0 auto;
 }
-.con4 .down {
+.con4 .con4_wrap .down {
   width: 100%;
   padding: 50px;
   display: flex;
@@ -279,36 +279,36 @@ header .nav .two_dep {
   align-items: center;
   gap: 30px;
 }
-.con4 .down .left {
+.con4 .con4_wrap .down .left {
   flex: 1 1 40%;
   font-size: 26px;
   color: #333;
 }
-.con4 .down .con {
+.con4 .con4_wrap .down .con {
   flex: 1 1 50%;
   position: relative;
 }
-.con4 .down .con a {
+.con4 .con4_wrap .down .con a {
   display: block;
   width: 100%;
 }
-.con4 .down .con a img {
+.con4 .con4_wrap.down .con a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.con4 .down .right {
+.con4 .con4_wrap .down .right {
   flex: 1 1 40%;
   display: flex;
   flex-direction: column;
 }
-.con4 .down .right a {
+.con4 .con4_wrap .down .right a {
   display: block;
   font-size: 16px;
   color: #999;
   padding-bottom: 30px;
 }
-.con4 .down .right a span {
+.con4 .con4_wrap .down .right a span {
   font-size: 20px;
   color: #999;
 }
@@ -349,5 +349,5 @@ header .nav .two_dep {
   width: 100%;
 }
 .con6 img {
-  min-width: 100%;
+  width: 100%;
 }
