@@ -152,6 +152,9 @@ header .nav .two_dep {
 }
 .con2 .down {
   width: 100%;
+  height: 800px;
+  padding: 0 50px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,13 +178,16 @@ header .nav .two_dep {
   font-size: 22px;
   font-weight: bold;
 }
-.con2 .down > div {
-  flex: 1;
+.con2 .down > .center {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-.con2 .down > div video {
+.con2 .down > .center video {
   width: 100%;
   height: 800px;
   object-fit: cover;
+  position: absolute;
 }
 .con2 .down .right {
   position: relative;
@@ -263,6 +269,7 @@ header .nav .two_dep {
 }
 .con4 .down {
   width: 100%;
+  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
