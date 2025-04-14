@@ -188,6 +188,10 @@ header .nav .two_dep {
   height: 800px;
   object-fit: cover;
   position: absolute;
+  opacity: 0;
+}
+.con2 .down > .center video.on {
+  opacity: 1;
 }
 .con2 .down .right {
   position: relative;
