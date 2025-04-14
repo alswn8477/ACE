@@ -1,7 +1,7 @@
 @import url();
 @font-face {
   font-family: Metropolis;
-  src: url(./webfonts/Metropolis-Regular.woff) format("woff");
+  src: url(./webfonts/Metropolis-Light.woff) format("woff");
 }
 @font-face {
   font-family: NotoSansKR;
@@ -10,8 +10,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Metropolis", "NotoSansKR", "맑은고딕", "MalgunGothic",
-    sans-serif;
+  font-family: Metropolis, NotoSansKR, 맑은고딕, MalgunGothic, sans-serif;
 }
 ul {
   list-style: none;
@@ -126,32 +125,33 @@ header .nav .two_dep {
   object-fit: cover;
 }
 
-.con2,
-.con3,
-.con4 {
+.con2 {
   width: 90%;
   padding: 20px 0;
   margin: 0 auto;
+  position: relative;
 }
 .con2 h1,
 .con3 h1,
-.con4 h1 {
+.con4 h1,
+.con5 h1 {
   font-size: 50px;
+  font-weight: 300;
   color: #333;
   text-align: center;
+  padding: 100px 0 50px 0;
 }
 .con2 > a,
 .con3 > a {
   position: absolute;
-  left: 75%;
-  top: 1%;
+  right: 15%;
+  top: 120px;
   text-decoration: none;
   font-size: 16px;
   color: #666;
 }
 .con2 .down {
   width: 100%;
-  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,6 +162,8 @@ header .nav .two_dep {
 }
 .con2 .down .left {
   font-size: 16px;
+  width: 300px;
+  height: 150px;
 }
 .con2 .down .left a {
   display: block;
@@ -224,13 +226,18 @@ header .nav .two_dep {
   }
 } */
 
+.con3 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: #f4f7fa;
+}
 .con3 .swiper {
   width: 100%;
 }
 .con3 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,21 +251,30 @@ header .nav .two_dep {
   object-fit: cover;
 }
 
+.con4 {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #f4f7fa;
+}
+.con4 .con4_wrap {
+  width: 1440px;
+  margin: 0 auto;
+}
 .con4 .down {
   width: 100%;
-  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 .con4 .down .left {
-  flex: 0.4;
+  flex: 1 1 40%;
   font-size: 26px;
   color: #333;
 }
 .con4 .down .con {
-  flex: 1;
+  flex: 1 1 50%;
   position: relative;
 }
 .con4 .down .con a {
@@ -271,7 +287,7 @@ header .nav .two_dep {
   object-fit: cover;
 }
 .con4 .down .right {
-  flex: 0.4;
+  flex: 1 1 40%;
   display: flex;
   flex-direction: column;
 }
@@ -284,4 +300,36 @@ header .nav .two_dep {
 .con4 .down .right a span {
   font-size: 20px;
   color: #999;
+}
+
+.con5 {
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.con5 ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+.con5 ul li {
+  width: 100%;
+  flex: 20%;
+}
+.con5 ul li a {
+  display: block;
+  width: 100%;
+}
+.con5 ul li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.con5 p {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
