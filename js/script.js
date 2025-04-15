@@ -2,6 +2,7 @@
 function loadAlert() {
   alert("Test!");
 }
+// * header *
 let nav = document.querySelector(".nav");
 let gnbL = document.querySelector(".left").querySelectorAll(".one_dep");
 let sub = document.querySelector(".left").querySelectorAll(".two_dep");
@@ -34,8 +35,10 @@ gnbL.forEach(function (v, k) {
     });
   };
 });
+
 // let span = gnbL.querySelectorAll("span");
 // span[1].style.display = "none";
+
 // * con2 *
 var swiper = new Swiper(".mySwiper", {
   autoplay: {
@@ -51,9 +54,9 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-let a = document.querySelectorAll(".con2 .down .left a");
-let lir = document.querySelectorAll(".con2 .down .right li");
-let vid = document.querySelectorAll(".con2 .down .center video");
+let a = document.querySelectorAll(".con2 .inner .left a");
+let lir = document.querySelectorAll(".con2 .inner .right li");
+let vid = document.querySelectorAll(".con2 .inner .center video");
 
 // a[0].classList.add("on");
 // lir[0].classList.add("on");
@@ -79,6 +82,55 @@ a.forEach(function (v, k) {
     lir[k].classList.add("on");
     vid[k].classList.add("on");
   };
+});
+
+// * con2 button *
+function updateBtn(swiperI) {
+  const prevBtn = document.querySelector("#prev");
+  const nextBtn = document.querySelector("#next");
+
+  prevBtn.classList.toggle("disabled", swiperI.isBeginning);
+  nextBtn.classList.toggle("disabled", swiperI.isEnd);
+}
+
+const swiper2 = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: "#next",
+    prevEl: "#prev",
+  },
+  on: {
+    init(swiper) {
+      updateBtn(swiper);
+    },
+    slideChange(swiper) {
+      updateBtn(swiper);
+    },
+  },
+});
+const btnPrev = document.querySelector("#prev");
+const pathPrev = btnPrev.querySelector(".btn_prev");
+const btnNext = document.querySelector("#next");
+const pathnext = btnNext.querySelector(".btn_next");
+
+btnPrev.addEventListener("mouseenter", () => {
+  pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
+});
+
+btnPrev.addEventListener("mouseleave", () => {
+  pathPrev.setAttribute("d", "M 30 10 Q 30 65 30 140");
+});
+btnNext.addEventListener("mouseenter", () => {
+  pathnext.setAttribute("d", "M 20 10 Q 60 65 20 140");
+});
+
+btnNext.addEventListener("mouseleave", () => {
+  pathnext.setAttribute("d", "M 20 10 Q 20 65 20 140");
+});
+const btns = document.querySelectorAll(".btn div");
+btns.forEach((v, k) => {
+  v.addEventListener("click", () => {
+    swiper.slideTo(k); // 0부터 시작하는 인덱스
+  });
 });
 
 // * con3 *
