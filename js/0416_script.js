@@ -6,19 +6,6 @@ function loadAlert() {
 let nav = document.querySelector(".nav");
 let gnbL = document.querySelector(".left").querySelectorAll(".one_dep");
 let sub = document.querySelector(".left").querySelectorAll(".two_dep");
-
-function myspan() {
-  document
-    .querySelectorAll(".one_dep")
-    .querySelector("div")
-    .querySelector("a")
-    .querySelectorAll("span")
-    .forEach(function (v, k) {
-      v[0].style.display = "none";
-      v[1].style.display = "block";
-    });
-}
-
 gnbL.forEach(function (v, k) {
   v.onmouseenter = function () {
     document.querySelector(".logo").style.display = "none";
@@ -28,8 +15,12 @@ gnbL.forEach(function (v, k) {
     //   .querySelectorAll("span");
     // span[0].style.display = "none";
     // span[1].style.display = "block";
-    myspan();
+    gnbL.forEach(function (item) {
+      let spans = item.querySelectorAll("div > a > span");
 
+      spans[0].style.display = "none"; // 첫 번째 span 숨기고
+      spans[1].style.display = "block"; // 두 번째 span 보이기
+    });
     document.querySelector(".nav").style.height = "180px";
     sub.forEach(function (v, k) {
       v.classList.add("on");
