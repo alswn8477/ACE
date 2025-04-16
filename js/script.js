@@ -10,12 +10,15 @@ let sub = document.querySelector(".left").querySelectorAll(".two_dep");
 gnbL.forEach(function (v, k) {
   v.onmouseenter = function () {
     document.querySelector(".logo").style.display = "none";
-    let span = v
-      .querySelector("div")
-      .querySelector("a")
-      .querySelectorAll("span");
-    span[0].style.display = "none";
-    span[1].style.display = "block";
+    // let span = v
+    //   .querySelector("div")
+    //   .querySelector("a")
+    //   .querySelectorAll("span");
+    // span[0].style.display = "none";
+    // span[1].style.display = "block";
+    document.getElementsByClassName("up").style.display = "none";
+    document.getElementsByClassName("down").style.display = "block";
+
     document.querySelector(".nav").style.height = "180px";
     sub.forEach(function (v, k) {
       v.classList.add("on");
@@ -85,13 +88,13 @@ a.forEach(function (v, k) {
 });
 
 // * con2 button *
-function updateBtn(swiperI) {
-  const prevBtn = document.querySelector("#prev");
-  const nextBtn = document.querySelector("#next");
+// function updateBtn(swiperI) {
+//   const prevBtn = document.querySelector("#prev");
+//   const nextBtn = document.querySelector("#next");
 
-  prevBtn.classList.toggle("disabled", swiperI.isBeginning);
-  nextBtn.classList.toggle("disabled", swiperI.isEnd);
-}
+//   prevBtn.classList.toggle("disabled", swiperI.isBeginning);
+//   nextBtn.classList.toggle("disabled", swiperI.isEnd);
+// }
 
 const swiper2 = new Swiper(".mySwiper", {
   navigation: {
