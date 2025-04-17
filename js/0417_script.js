@@ -23,6 +23,8 @@ gnbL.forEach(function (v, k) {
     });
     nav.classList.add("on");
     document.querySelector(".left").classList.add("on");
+    v.querySelector(".down").style.color = "#0890c0";
+    this.classList.add("on");
   };
   v.onmouseleave = function () {
     document.querySelector(".logo").style.display = "block";
@@ -35,7 +37,10 @@ gnbL.forEach(function (v, k) {
     sub.forEach(function (v, k) {
       v.classList.remove("on");
     });
+    nav.classList.add("on");
     document.querySelector(".left").classList.remove("on");
+    v.querySelector(".down").style.color = "#333";
+    this.classList.remove("on");
   };
 });
 gnbR.forEach(function (v, k) {
@@ -47,6 +52,7 @@ gnbR.forEach(function (v, k) {
     });
     nav.classList.add("on");
     document.querySelector(".right").classList.add("on");
+    v.querySelector("span").style.color = "#0890c0";
   };
   v.onmouseleave = function () {
     document.querySelector(".logo").style.display = "block";
@@ -55,5 +61,6 @@ gnbR.forEach(function (v, k) {
       v.classList.remove("on");
     });
     document.querySelector(".right").classList.remove("on");
+    v.querySelector("span").style.color = "#333";
   };
 });
