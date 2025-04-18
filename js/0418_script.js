@@ -67,77 +67,33 @@ gnbR.forEach(function (v, k) {
 });
 
 // con
-function updateBtn(swiperI) {
-  const prevBtn = document.querySelector("#prev1");
-  const nextBtn = document.querySelector("#next1");
-  prevBtn.classList.toggle("disabled", swiperI.isBeginning);
-  nextBtn.classList.toggle("disabled", swiperI.isEnd);
-}
-const swiper = new Swiper(".Swiper", {
-  slidesPerView: 1,
-  loop: true,
-  navigation: {
-    nextEl: "#next1",
-    prevEl: "#prev1",
-  },
-  on: {
-    init(swiper) {
-      updateBtn(swiper);
-    },
-    slideChange(swiper) {
-      updateBtn(swiper);
-    },
-  },
-});
-const btnPrev = document.querySelector("#prev1");
-const pathPrev = btnPrev.querySelector(".btn_prev1");
-const btnNext = document.querySelector("#next1");
-const pathnext = btnNext.querySelector(".btn_next1");
-
-btnPrev.addEventListener("mouseenter", () => {
-  pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
-});
-btnPrev.addEventListener("mouseleave", () => {
-  pathPrev.setAttribute("d", "M 30 10 Q 30 65 30 140");
-});
-btnNext.addEventListener("mouseenter", () => {
-  pathnext.setAttribute("d", "M 20 10 Q 60 65 20 140");
-});
-btnNext.addEventListener("mouseleave", () => {
-  pathnext.setAttribute("d", "M 20 10 Q 20 65 20 140");
-});
-const btns = document.querySelectorAll(".btn div");
-btns.forEach((v, k) => {
-  v.addEventListener("click", () => {
-    swiper.slideTo(k); // 0부터 시작하는 인덱스
-  });
-});
-
-// con2
-// function updateBtn(swiper2) {
-//   const prevBtn = document.querySelector("#prev2");
-//   const nextBtn = document.querySelector("#next2");
-//   prevBtn.classList.toggle("disabled", swiper2.isBeginning);
-//   nextBtn.classList.toggle("disabled", swiper2.isEnd);
+// function updateBtn(swiperI) {
+//   const prevBtn = document.querySelector("#prev1");
+//   const nextBtn = document.querySelector("#next1");
+//   prevBtn.classList.toggle("disabled", swiperI.isBeginning);
+//   nextBtn.classList.toggle("disabled", swiperI.isEnd);
 // }
-// const swiper2 = new Swiper(".mySwiper", {
+// const swiper = new Swiper(".Swiper", {
+//   slidesPerView: 1,
+//   loop: true,
 //   navigation: {
-//     nextEl: "#next2",
-//     prevEl: "#prev2",
+//     nextEl: "#next1",
+//     prevEl: "#prev1",
 //   },
 //   on: {
-//     init(swiper2) {
-//       updateBtn(swiper2);
+//     init(swiper) {
+//       updateBtn(swiper);
 //     },
-//     slideChange(swiper2) {
-//       updateBtn(swiper2);
+//     slideChange(swiper) {
+//       updateBtn(swiper);
 //     },
 //   },
 // });
-// const btnPrev = document.querySelector("#prev2");
-// const pathPrev = btnPrev.querySelector(".btn_prev2");
-// const btnNext = document.querySelector("#next2");
-// const pathnext = btnNext.querySelector(".btn_next2");
+// const btnPrev = document.querySelector("#prev1");
+// const pathPrev = btnPrev.querySelector(".btn_prev1");
+// const btnNext = document.querySelector("#next1");
+// const pathnext = btnNext.querySelector(".btn_next1");
+
 // btnPrev.addEventListener("mouseenter", () => {
 //   pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
 // });
@@ -156,3 +112,47 @@ btns.forEach((v, k) => {
 //     swiper.slideTo(k); // 0부터 시작하는 인덱스
 //   });
 // });
+
+con2;
+function updateBtn(swiper) {
+  const prevBtn = document.querySelector("#prev");
+  const nextBtn = document.querySelector("#next");
+  prevBtn.classList.toggle("disabled", swiper.isBeginning);
+  nextBtn.classList.toggle("disabled", swiper.isEnd);
+}
+const swiper2 = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: "#next",
+    prevEl: "#prev",
+  },
+  on: {
+    init(swiper) {
+      updateBtn(swiper);
+    },
+    slideChange(swiper) {
+      updateBtn(swiper);
+    },
+  },
+});
+const btnPrev = document.querySelector("#prev");
+const pathPrev = btnPrev.querySelector(".btn_prev");
+const btnNext = document.querySelector("#next");
+const pathnext = btnNext.querySelector(".btn_next");
+btnPrev.addEventListener("mouseenter", () => {
+  pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
+});
+btnPrev.addEventListener("mouseleave", () => {
+  pathPrev.setAttribute("d", "M 30 10 Q 30 65 30 140");
+});
+btnNext.addEventListener("mouseenter", () => {
+  pathnext.setAttribute("d", "M 20 10 Q 60 65 20 140");
+});
+btnNext.addEventListener("mouseleave", () => {
+  pathnext.setAttribute("d", "M 20 10 Q 20 65 20 140");
+});
+const btns = document.querySelectorAll(".btn div");
+btns.forEach((v, k) => {
+  v.addEventListener("click", () => {
+    swiper.slideTo(k); // 0부터 시작하는 인덱스
+  });
+});

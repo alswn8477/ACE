@@ -275,7 +275,7 @@ svg path {
 }
 
 /* con2 */
-/* .con2 {
+.con2 {
   width: 100%;
   padding: 20px 80px;
   box-sizing: border-box;
@@ -415,4 +415,4 @@ svg path {
   opacity: 0.3;
   pointer-events: none;
   cursor: not-allowed;
-} */
+}
