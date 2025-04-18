@@ -1,3 +1,6 @@
+0418 js 
+nav 호버 수정 전
+
 // script.js
 function loadAlert() {
   alert("Test!");
@@ -17,11 +20,14 @@ gnbL.forEach(function (v, k) {
       spans[0].style.display = "none"; // 첫 번째 span 숨기고
       spans[1].style.display = "block"; // 두 번째 span 보이기
     });
-    document.querySelector(".nav").style.height = "300px";
+    document.querySelector(".nav").style.height = "280px";
     sub.forEach(function (v, k) {
       v.classList.add("on");
     });
     nav.classList.add("on");
+    document.querySelector(".left").classList.add("on");
+    v.querySelector(".down").style.color = "#0890c0";
+    this.classList.add("on");
   };
   v.onmouseleave = function () {
     document.querySelector(".logo").style.display = "block";
@@ -34,15 +40,22 @@ gnbL.forEach(function (v, k) {
     sub.forEach(function (v, k) {
       v.classList.remove("on");
     });
+    nav.classList.add("on");
+    document.querySelector(".left").classList.remove("on");
+    v.querySelector(".down").style.color = "#333";
+    this.classList.remove("on");
   };
 });
 gnbR.forEach(function (v, k) {
   v.onmouseenter = function () {
     document.querySelector(".logo").style.display = "none";
-    document.querySelector(".nav").style.height = "300px";
+    document.querySelector(".nav").style.height = "280px";
     sub2.forEach(function (v, k) {
       v.classList.add("on");
     });
+    nav.classList.add("on");
+    document.querySelector(".right").classList.add("on");
+    v.querySelector("span").style.color = "#0890c0";
   };
   v.onmouseleave = function () {
     document.querySelector(".logo").style.display = "block";
@@ -50,5 +63,11 @@ gnbR.forEach(function (v, k) {
     sub2.forEach(function (v, k) {
       v.classList.remove("on");
     });
+    document.querySelector(".right").classList.remove("on");
+    v.querySelector("span").style.color = "#333";
   };
 });
+
+gnbL.onmouseenter = function () {
+  document.querySelector(".nav").style.height = "280px";
+};
