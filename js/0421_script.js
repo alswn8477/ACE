@@ -67,18 +67,19 @@ gnbR.forEach(function (v, k) {
 });
 
 // con
-function updateBtn(swiperI) {
-  const prevBtn = document.querySelector("#prev1");
-  const nextBtn = document.querySelector("#next1");
-  prevBtn.classList.toggle("disabled", swiperI.isBeginning);
-  nextBtn.classList.toggle("disabled", swiperI.isEnd);
+//나머지는 모두 같은데 updateBtn1,updateBtn2....으로 하시면 됩니다.
+function updateBtn(swiper) {
+  const prevBtn = document.querySelector("#prev");
+  const nextBtn = document.querySelector("#next");
+  prevBtn.classList.toggle("disabled", swiper.isBeginning);
+  nextBtn.classList.toggle("disabled", swiper.isEnd);
 }
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  loop: true,
+var swiper = new Swiper(".mySwiper", {
+  speed: 1000,
+  // loop: true,
   navigation: {
-    nextEl: "#next1",
-    prevEl: "#prev1",
+    nextEl: "#next",
+    prevEl: "#prev",
   },
   on: {
     init(swiper) {
@@ -89,70 +90,146 @@ const swiper = new Swiper(".mySwiper", {
     },
   },
 });
-const btnPrev = document.querySelector("#prev1");
-const pathPrev = btnPrev.querySelector(".btn_prev1");
-const btnNext = document.querySelector("#next1");
-const pathnext = btnNext.querySelector(".btn_next1");
-
-btnPrev.addEventListener("mouseenter", () => {
-  pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
+const btnPrev = document.querySelectorAll(".prev");
+const btnNext = document.querySelectorAll(".next");
+btnPrev.forEach(function (v, k) {
+  v.addEventListener("mouseenter", () => {
+    v.querySelector(".btn_prev").setAttribute("d", "M 30 10 Q -10 65 30 140");
+  });
+  v.addEventListener("mouseleave", () => {
+    v.querySelector(".btn_prev").setAttribute("d", "M 30 10 Q 30 65 30 140");
+  });
 });
-btnPrev.addEventListener("mouseleave", () => {
-  pathPrev.setAttribute("d", "M 30 10 Q 30 65 30 140");
-});
-btnNext.addEventListener("mouseenter", () => {
-  pathnext.setAttribute("d", "M 20 10 Q 60 65 20 140");
-});
-btnNext.addEventListener("mouseleave", () => {
-  pathnext.setAttribute("d", "M 20 10 Q 20 65 20 140");
-});
-const btns = document.querySelectorAll(".btn div");
-btns.forEach((v, k) => {
-  v.addEventListener("click", () => {
-    swiper.slideTo(k); // 0부터 시작하는 인덱스
+btnNext.forEach(function (v, k) {
+  v.addEventListener("mouseenter", () => {
+    v.querySelector(".btn_next").setAttribute("d", "M 20 10 Q 60 65 20 140");
+  });
+  v.addEventListener("mouseleave", () => {
+    v.querySelector(".btn_next").setAttribute("d", "M 20 10 Q 20 65 20 140");
   });
 });
 
 // con2;
-// function updateBtn(swiper) {
-//   const prevBtn = document.querySelector("#prev");
-//   const nextBtn = document.querySelector("#next");
+// function updateBtn1(swiper) {
+//   const prevBtn = document.querySelector("#prev1");
+//   const nextBtn = document.querySelector("#next1");
 //   prevBtn.classList.toggle("disabled", swiper.isBeginning);
 //   nextBtn.classList.toggle("disabled", swiper.isEnd);
 // }
-// const swiper1 = new Swiper(".mySwiper1", {
+// const listItems = document.querySelectorAll(".con2 .right li");
+
+// function myremove() {
+//   listItems.forEach(function (v, k) {
+//     v.classList.remove("on");
+//   });
+// }
+
+// listItems[0].classList.add("on");
+// var swiper1 = new Swiper(".mySwiper1", {
+//   speed: 1000,
 //   navigation: {
-//     nextEl: "#next",
-//     prevEl: "#prev",
+//     nextEl: "#next1",
+//     prevEl: "#prev1",
 //   },
 //   on: {
 //     init(swiper) {
-//       updateBtn(swiper);
+//       updateBtn1(swiper);
 //     },
 //     slideChange(swiper) {
-//       updateBtn(swiper);
+//       updateBtn1(swiper);
+//     },
+//     slideChange: function () {
+//       myremove();
+//       listItems[this.realIndex].classList.add("on");
 //     },
 //   },
 // });
-// const btnPrev = document.querySelector("#prev");
-// const pathPrev = btnPrev.querySelector(".btn_prev");
-// const btnNext = document.querySelector("#next");
-// const pathnext = btnNext.querySelector(".btn_next");
-// btnPrev.addEventListener("mouseenter", () => {
-//   pathPrev.setAttribute("d", "M 30 10 Q -10 65 30 140");
-// });
-// btnPrev.addEventListener("mouseleave", () => {
-//   pathPrev.setAttribute("d", "M 30 10 Q 30 65 30 140");
-// });
-// btnNext.addEventListener("mouseenter", () => {
-//   pathnext.setAttribute("d", "M 20 10 Q 60 65 20 140");
-// });
-// btnNext.addEventListener("mouseleave", () => {
-//   pathnext.setAttribute("d", "M 20 10 Q 20 65 20 140");
-// });
-// const btns = document.querySelectorAll(".btn div");
+// const btns = document.querySelectorAll(".inner .left a");
 // btns.forEach((v, k) => {
-//   v.addEventListener("click", () => {
-//     swiper.slideTo(k); // 0부터 시작하는 인덱스
+//   v.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     console.log(k);
+//     swiper1.slideTo(k);
 //   });
 // });
+
+function updateBtn1(swiper) {
+  const prevBtn = document.querySelector("#prev1");
+  const nextBtn = document.querySelector("#next1");
+  prevBtn.classList.toggle("disabled", swiper.isBeginning);
+  nextBtn.classList.toggle("disabled", swiper.isEnd);
+}
+const listItems = document.querySelectorAll(".con2 .right li");
+
+function myremove() {
+  listItems.forEach(function (v, k) {
+    v.classList.remove("on");
+  });
+}
+listItems[0].classList.add("on");
+
+var swiper1 = new Swiper(".mySwiper1", {
+  speed: 1000,
+  navigation: {
+    nextEl: "#next1",
+    prevEl: "#prev1",
+  },
+  on: {
+    init(swiper) {
+      updateBtn1(swiper);
+    },
+    slideChange(swiper) {
+      updateBtn1(swiper);
+    },
+    slideChange: function () {
+      myremove();
+      listItems[this.realIndex].classList.add("on");
+    },
+  },
+});
+const btns = document.querySelectorAll(".inner .left a");
+btns[0].classList.add("on");
+function myremove2() {
+  btns.forEach(function (v, k) {
+    v.classList.remove("on");
+  });
+}
+btns.forEach((v, k) => {
+  v.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(k);
+    swiper1.slideTo(k);
+    myremove2();
+    v.classList.add("on");
+  });
+});
+
+// con3
+var swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 30,
+});
+
+function updateBtn2(swiper) {
+  const prevBtn = document.querySelector("#prev2");
+  const nextBtn = document.querySelector("#next2");
+  prevBtn.classList.toggle("disabled", swiper.isBeginning);
+  nextBtn.classList.toggle("disabled", swiper.isEnd);
+
+  var swiper2 = new Swiper(".mySwiper2", {
+    speed: 1000,
+    navigation: {
+      nextEl: "#next2",
+      prevEl: "#prev2",
+    },
+    on: {
+      init(swiper) {
+        updateBtn1(swiper);
+      },
+      slideChange(swiper) {
+        updateBtn1(swiper);
+      },
+    },
+  });
+}
