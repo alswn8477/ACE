@@ -28,7 +28,7 @@ gnbL.onmouseenter = function () {
 };
 gnbL.onmouseleave = function () {
   document.querySelector(".logo").style.display = "block";
-  gnbL.forEach(function (item) {
+  gnbL.querySelectorAll(".one_dep").forEach(function (item) {
     let spans = item.querySelectorAll("div > a > span");
     spans[0].style.display = "block"; // 첫 번째 span 숨기고
     spans[1].style.display = "none"; // 두 번째 span 보이기
@@ -52,7 +52,7 @@ gnbR.onmouseenter = function () {
   document.querySelector(".right").classList.add("on");
   v.querySelector("span").style.color = "#0890c0";
 };
-v.onmouseleave = function () {
+gnbR.onmouseleave = function () {
   document.querySelector(".logo").style.display = "block";
   document.querySelector(".nav").style.height = "0";
   sub2.forEach(function (v, k) {
@@ -60,12 +60,6 @@ v.onmouseleave = function () {
   });
   document.querySelector(".right").classList.remove("on");
   v.querySelector("span").style.color = "#333";
-};
-nav.onmouseenter = function () {
-  document.querySelector(".nav").style.height = "280px";
-};
-gnbL.onmouseenter = function () {
-  this.style.height = "100%";
 };
 
 // con
@@ -111,50 +105,7 @@ btnNext.forEach(function (v, k) {
   });
 });
 
-// con2;
-// function updateBtn1(swiper) {
-//   const prevBtn = document.querySelector("#prev1");
-//   const nextBtn = document.querySelector("#next1");
-//   prevBtn.classList.toggle("disabled", swiper.isBeginning);
-//   nextBtn.classList.toggle("disabled", swiper.isEnd);
-// }
-// const listItems = document.querySelectorAll(".con2 .right li");
-
-// function myremove() {
-//   listItems.forEach(function (v, k) {
-//     v.classList.remove("on");
-//   });
-// }
-
-// listItems[0].classList.add("on");
-// var swiper1 = new Swiper(".mySwiper1", {
-//   speed: 1000,
-//   navigation: {
-//     nextEl: "#next1",
-//     prevEl: "#prev1",
-//   },
-//   on: {
-//     init(swiper) {
-//       updateBtn1(swiper);
-//     },
-//     slideChange(swiper) {
-//       updateBtn1(swiper);
-//     },
-//     slideChange: function () {
-//       myremove();
-//       listItems[this.realIndex].classList.add("on");
-//     },
-//   },
-// });
-// const btns = document.querySelectorAll(".inner .left a");
-// btns.forEach((v, k) => {
-//   v.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     console.log(k);
-//     swiper1.slideTo(k);
-//   });
-// });
-
+// con2
 function updateBtn1(swiper) {
   const prevBtn = document.querySelector("#prev1");
   const nextBtn = document.querySelector("#next1");
@@ -183,19 +134,23 @@ var swiper1 = new Swiper(".mySwiper1", {
     slideChange(swiper) {
       updateBtn1(swiper);
     },
-    slideChange: function () {
-      myremove();
-      listItems[this.realIndex].classList.add("on");
-    },
   },
 });
 const btns = document.querySelectorAll(".inner .left a");
 btns[0].classList.add("on");
+
 function myremove2() {
   btns.forEach(function (v, k) {
     v.classList.remove("on");
   });
 }
+swiper1.on("slideChange", function () {
+  myremove();
+  listItems[this.realIndex].classList.add("on");
+  myremove2();
+  btns[this.realIndex].classList.add("on");
+});
+
 btns.forEach((v, k) => {
   v.addEventListener("click", (e) => {
     e.preventDefault();
@@ -207,30 +162,38 @@ btns.forEach((v, k) => {
 });
 
 // con3
-var swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: "auto",
-  centeredSlides: true,
-  spaceBetween: 30,
-});
-
 function updateBtn2(swiper) {
   const prevBtn = document.querySelector("#prev2");
   const nextBtn = document.querySelector("#next2");
   prevBtn.classList.toggle("disabled", swiper.isBeginning);
   nextBtn.classList.toggle("disabled", swiper.isEnd);
 }
+
+var swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 30,
+});
+
 var swiper2 = new Swiper(".mySwiper2", {
   speed: 1000,
+  slidesPerView: 1.5,
+  spaceBetween: 30,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   navigation: {
     nextEl: "#next2",
     prevEl: "#prev2",
   },
   on: {
     init(swiper) {
-      updateBtn1(swiper);
+      updateBtn2(swiper);
     },
     slideChange(swiper) {
-      updateBtn1(swiper);
+      updateBtn2(swiper);
     },
   },
 });
