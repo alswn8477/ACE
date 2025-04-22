@@ -180,6 +180,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 1.5,
   spaceBetween: 30,
   centeredSlides: true,
+  grabCursor: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -195,5 +196,8 @@ var swiper2 = new Swiper(".mySwiper2", {
     slideChange(swiper) {
       updateBtn2(swiper);
     },
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
   },
 });
