@@ -205,7 +205,7 @@ header .nav .search a img {
   position: relative;
 }
 .con {
-  padding: 0 80px;
+  padding: 30px 80px 100px;
   margin-top: 100px;
 }
 .con .swiper {
@@ -312,7 +312,7 @@ svg path {
 }
 .con2 {
   width: 100%;
-  padding: 20px 80px;
+  padding: 30px 80px 100px;
   box-sizing: border-box;
   /* position: relative; */
 }
@@ -428,7 +428,7 @@ svg path {
 }
 .con3 {
   width: 100%;
-  padding: 20px 80px;
+  padding: 30px 80px 100px;
   box-sizing: border-box;
 }
 .con3 h1 {
@@ -519,7 +519,6 @@ svg path {
 }
 
 /* con4 */
-
 .con4Wrap {
   width: 100%;
   position: relative;
@@ -527,7 +526,7 @@ svg path {
 }
 .con4 {
   width: 100%;
-  padding: 20px 80px;
+  padding: 30px 80px 100px;
   box-sizing: border-box;
 }
 .con4 h1 {
@@ -562,19 +561,69 @@ svg path {
   justify-content: center;
   align-items: flex-start;
 }
-.con4 .swiper {
+.con4 .swiper-wrapper {
   width: 710px;
 }
 .con4 .swiper-slide {
-  width: 100% !important;
-  margin-right: 0 !important;
-  text-align: center;
+  width: 710px !important;
+  margin: 0 auto !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .con4 .swiper-slide img {
   width: 100%;
+  object-fit: cover;
+}
+
+/* con5 */
+.con5Wrap {
+  width: 100%;
+  position: relative;
+}
+.con5 {
+  width: 100%;
+  padding: 30px 80px 100px;
+  box-sizing: border-box;
+}
+.con5 h1 {
+  font-size: 50px;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+  padding: 100px 0 50px 0;
+}
+.con5 ul {
+  width: 100%;
+  padding: 0 150px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.con5 ul li {
+  width: 100%;
+  flex: 20%;
+  overflow: hidden;
+}
+.con5 ul li a {
+  display: block;
+  width: 100%;
+}
+.con5 ul li a img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 1s;
+}
+.con5 ul li a:hover img {
+  transform: scale(1.1);
+}
+.con5 p {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }

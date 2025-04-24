@@ -207,6 +207,8 @@ var swiper2 = new Swiper(".mySwiper2", {
 var swiper = new Swiper(".mySwiper3", {
   slidesPerView: 1,
   centeredSlides: true,
-  spaceBetween: 30,
+  spaceBetween: 0,
   grabCursor: true,
 });
+
+// con5
