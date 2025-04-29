@@ -660,16 +660,16 @@ svg path {
   padding: 30px 0 100px;
   box-sizing: border-box;
 }
-.con6 > p {
+.con6 #map {
   width: 100%;
   height: 500px;
   overflow: hidden;
 }
-.con6 img {
+.con6 #map img {
   min-width: 100%;
   height: 100%;
 }
-.con6 .box {
+.con6 .inner {
   width: 340px;
   height: 340px;
   position: absolute;
@@ -678,25 +678,31 @@ svg path {
   border: 1px solid #0890c0;
   background: #0890c0;
 }
-.con6 .box .txt {
-  width: 100%;
-  height: 100%;
+.con6 .inner .txt {
+  width: 200px;
+  height: 60px;
   position: relative;
-}
-.con6 .box p {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  transform: translateX(-50%);
 }
-.con6 .box .search {
+.con6 .inner .txt p {
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: -0.025em;
+}
+.con6 .inner .search {
   position: absolute;
   left: 50%;
   top: 70%;
   transform: translateX(-50%);
   display: flex;
 }
-.con6 .box .searchInput input {
+.con6 .inner .searchInput input {
   float: left;
   width: calc(100% - 27px);
   padding: 0px;
@@ -706,18 +712,117 @@ svg path {
   line-height: 30px;
   background: none;
 }
-/* font-size: 16px;
-font-weight: 300;
-color: rgb(255, 255, 255);
-line-height: 30px;
-background: transparent; */
 .con6 .mainCon {
   width: 100%;
+}
+.con6 .mainCon ul {
+  width: 700px;
+  height: 100x;
+  margin: 50px 0 0 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.con6 .mainCon ul {
-  flex: 1;
+.con6 .mainCon ul li {
+  width: 200px;
+  height: 95px;
+  text-align: center;
+}
+.con6 .mainCon ul li a {
+  display: block;
+  border-right: 1px solid #ebebeb;
+  text-align: center;
+}
+.con6 .mainCon ul li:last-child a {
+  border-right: none;
+}
+.con6 .mainCon ul li a img {
+  margin-bottom: 10px;
+}
+.con6 .mainCon ul li a p {
+  font-size: 20px;
+}
+.con6 .left {
+  width: 50%;
+  height: 360px;
+  margin-top: 200px;
+  float: left;
+  background: #f4f4f4;
+}
+.con6 .left ul {
+  width: 70%;
+  height: 100%;
+  float: right;
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
+  border: 1px solid #f4f4f4;
+  background: #f4f4f4;
+  gap: 50px;
+}
+.con6 .left ul li {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.con6 .left ul li p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.con6 .left ul li p:nth-child(2) {
+  font-size: 40px;
+  font-weight: 300;
+  color: #333;
+  margin: 35px 0 0;
+}
+.con6 .left ul li p:nth-child(3) {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  color: #888;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  padding: 30px 80px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .left ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+}
+footer .left ul li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  line-height: 36px;
+}
+footer .left p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  color: #777;
+  line-height: 30px;
+}
+footer .right a {
+  width: 240px;
+  height: 48px;
+  display: block;
+  padding: 15px 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid;
+  font-size: 16px;
+  font-weight: 300;
+  color: #333333;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  background: url(../images/select-icon2-on.png) no-repeat right center;
 }
