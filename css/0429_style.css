@@ -393,8 +393,16 @@ svg path {
 .con2 .inner .right li h3 {
   font-size: 40px;
   font-weight: 500;
+  color: #333;
   line-height: 54px;
   letter-spacing: -3px;
+  word-break: keep-all;
+}
+.con2 .inner .right li p {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 24px;
+  word-break: keep-all;
 }
 .con2 .inner .visual {
   position: relative;
