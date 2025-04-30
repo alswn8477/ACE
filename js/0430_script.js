@@ -23,7 +23,7 @@ gnbL.onmouseenter = function () {
   });
   nav.classList.add("on");
   document.querySelector(".left").classList.add("on");
-  v.querySelector(".down").style.color = "#0890c0";
+  this.querySelector(".down").style.color = "#0890c0";
   this.classList.add("on");
 };
 gnbL.onmouseleave = function () {
@@ -39,7 +39,7 @@ gnbL.onmouseleave = function () {
   });
   nav.classList.add("on");
   document.querySelector(".left").classList.remove("on");
-  v.querySelector(".down").style.color = "#333";
+  this.querySelector(".down").style.color = "#333";
   this.classList.remove("on");
 };
 gnbR.onmouseenter = function () {
@@ -61,6 +61,18 @@ gnbR.onmouseleave = function () {
   document.querySelector(".right").classList.remove("on");
   v.querySelector("span").style.color = "#333";
 };
+
+let prevScroll = window.pageYOffset;
+window.addEventListener("scroll", function () {
+  const currentScroll = window.pageYOffset;
+  const header = this.document.querySelector("header");
+  if (prevScroll < currentScroll) {
+    header.style.top = "-500px";
+  } else {
+    header.style.top = "0";
+  }
+  prevScroll = currentScroll;
+});
 
 // con
 //나머지는 모두 같은데 updateBtn1,updateBtn2....으로 하시면 됩니다.
