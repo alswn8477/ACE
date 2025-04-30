@@ -64,8 +64,12 @@ header .top ul li {
   align-items: center;
 }
 header .top ul li a {
+  height: 20px;
   color: #666666;
   font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header .top ul li:nth-child(3) {
   padding-left: 10px;
