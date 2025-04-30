@@ -466,6 +466,7 @@ svg path {
   width: 100%;
   padding: 30px 80px 100px;
   box-sizing: border-box;
+  position: relative;
 }
 .con3 h1 {
   font: 50px MetropolisL;
@@ -503,7 +504,6 @@ svg path {
 }
 .con3 .swiper .swiper-wrapper {
   width: 100%;
-  position: relative;
 }
 .con3 .swiper-slide {
   text-align: center;
@@ -561,9 +561,17 @@ svg path {
 }
 .con3 .swiper-scrollbar {
   position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 1;
+  left: 50%;
+  top: 95%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+.con3 .swiper-scrollbar-drag {
+  background: #0890c0;
+  border-radius: 2px;
 }
 
 /* con4 */
@@ -929,10 +937,13 @@ footer .right a {
 /*sideBtn */
 .sideBtn {
   position: fixed;
+  z-index: 30;
   right: 0;
   bottom: 0;
-  /* transition: all 0.5s ease; */
-  z-index: 30;
+}
+.sideBtn.on {
+  position: fixed;
+  bottom: 160px;
 }
 .sideBtn:hover a:nth-child(2) {
   background: #0890c0;
@@ -948,13 +959,12 @@ footer .right a {
   justify-content: center;
   width: 80px;
   height: 50px;
-  font-size: 13px;
-  font-weight: 700;
+  font: 13px MetropolisB;
   color: #333;
   line-height: 1;
   letter-spacing: 0.8px;
-  transition: all 0.5s ease;
   opacity: 0;
+  transition: 0.5s;
 }
 .sideBtn a:nth-child(2) {
   position: relative;
