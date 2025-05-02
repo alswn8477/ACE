@@ -17,6 +17,8 @@ gnbL.onmouseenter = function () {
   // document.querySelector(".nav").style.background = "#fff";
   header.style.height = "330px";
   header.style.background = "#fff";
+  document.querySelector(".search").classList.add("on");
+  document.querySelector("header .top ul").classList.add("on");
 
   sub.forEach(function (v, k) {
     v.classList.add("on");
@@ -36,13 +38,15 @@ gnbL.onmouseleave = function () {
   // document.querySelector(".nav").style.height = "0";
   header.style.height = "330px";
   header.style.background = "transparent";
+  document.querySelector(".search").classList.remove("on");
+  document.querySelector("header .top ul").classList.remove("on");
 
   sub.forEach(function (v, k) {
     v.classList.remove("on");
   });
   nav.classList.add("on");
   document.querySelector(".left").classList.remove("on");
-  this.querySelector(".down").style.color = "#333";
+  // this.querySelector(".down").style.color = "#333";
   this.classList.remove("on");
 };
 gnbR.onmouseenter = function () {
@@ -51,6 +55,8 @@ gnbR.onmouseenter = function () {
   // header.style.background = "#fff";
   header.style.height = "330px";
   header.style.background = "#fff";
+  document.querySelector(".search").classList.add("on");
+  document.querySelector("header .top ul").classList.add("on");
 
   sub2.forEach(function (v, k) {
     v.classList.add("on");
@@ -64,6 +70,8 @@ gnbR.onmouseleave = function () {
   document.querySelector(".nav").style.height = "0";
   header.style.height = "330px";
   header.style.background = "transparent";
+  document.querySelector(".search").classList.remove("on");
+  document.querySelector("header .top ul").classList.remove("on");
 
   sub2.forEach(function (v, k) {
     v.classList.remove("on");

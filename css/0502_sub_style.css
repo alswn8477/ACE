@@ -70,20 +70,25 @@ header .top ul li {
 }
 header .top ul li a {
   height: 20px;
-  color: #666666;
+  color: #fff;
   font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+header .top ul.on li:nth-child(1) a,
+header .top ul.on li:nth-child(2) a {
+  color: #666;
+}
+
 header .top ul li:nth-child(3) {
   padding-left: 10px;
 }
 header .top ul li:nth-child(3) a {
   color: #fff;
-  border: 1px solid #e36f96;
+  border: 1px solid #fff;
   border-radius: 50px;
-  background: #e36f96;
+  background: transparent;
   padding: 5px 10px;
   display: flex;
   justify-content: center;
@@ -92,14 +97,22 @@ header .top ul li:nth-child(3) a {
 }
 header .top ul li:nth-child(4) a {
   color: #fff;
-  border: 1px solid #9badb6;
+  border: 1px solid #fff;
   border-radius: 50px;
-  background: #9badb6;
+  background: transparent;
   padding: 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+header .top ul.on li:nth-child(3) a {
+  border: 1px solid #e36f96;
+  background: #e36f96;
+}
+header .top ul.on li:nth-child(4) a {
+  border: 1px solid #9badb6;
+  background: #9badb6;
 }
 header .nav {
   width: 100%;
@@ -231,6 +244,13 @@ header .nav .search {
 }
 header .nav .search a img {
   vertical-align: middle;
+}
+header .nav .search a img:nth-child(2),
+header .nav .search.on a img:nth-child(1) {
+  display: none;
+}
+header .nav .search.on a img:nth-child(2) {
+  display: block;
 }
 
 .spring {
