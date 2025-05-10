@@ -327,6 +327,7 @@ header .nav .search.on a img:nth-child(2) {
 .con3 {
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 .con3 .bg {
   position: relative;
@@ -341,12 +342,12 @@ header .nav .search.on a img:nth-child(2) {
   background: url(../images/PRO-007-01_part2bg1.jpg) center/cover;
   /* display: none; */
 }
-.con3 .bg .bg2 {
+/* .con3 .bg .bg2 {
   width: 100%;
   height: 100vh;
   background: url(../images/PRO-007-01_part2bg2.jpg) center/cover;
   display: none;
-}
+} */
 .con3 .txt {
   position: absolute;
   top: 50%;
@@ -370,6 +371,37 @@ header .nav .search.on a img:nth-child(2) {
 }
 .con3 .txt p:nth-child(3) {
   font-size: 16px;
+}
+.con3 a {
+  display: block;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 20px;
+}
+.con3 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 75%;
+  width: 0%;
+  height: 4px;
+  background: #d6eff8;
+  opacity: 0.8;
+  animation: ani 0.5s linear;
+  transition: 0.5s;
+}
+.con3 a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 75%;
+  width: 100%;
+  height: 4px;
+  background: #d6eff8;
+  opacity: 0.8;
 }
 
 .con4 {
