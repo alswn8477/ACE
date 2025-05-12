@@ -342,3 +342,11 @@ window.addEventListener("scroll", function () {
     sideBtn.classList.remove("on");
   }
 });
+
+// freeboard
+function Height() {
+  var the_height =
+    document.getElementById("iframe").contentWindow.document.body.scrollHeight;
+  document.getElementById("iframe").height = the_height + 50;
+  document.getElementById("iframe").style.overflow = "hidden";
+}
