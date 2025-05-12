@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #freeboard {
+        width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="freeboard">
+      <iframe
+        src="http://ju1208.dothome.co.kr/gnuboard5/bbs/board.php?bo_table=free"
+        id="iframe"
+        style="width: 100%"
+        onload="Height();"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
+    <script>
+      function Height() {
+        var the_height =
+          document.getElementById("iframe").contentWindow.document.body
+            .scrollHeight;
+        document.getElementById("iframe").height = the_height + 50;
+        document.getElementById("iframe").style.overflow = "hidden";
+      }
+    </script>
+  </body>
+</html>
