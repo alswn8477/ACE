@@ -154,6 +154,8 @@ var swiper1 = new Swiper(".mySwiper1", {
     nextEl: "#next1",
     prevEl: "#prev1",
   },
+  simulateTouch: true, // 마우스 드래그 가능하게
+  grabCursor: true, // 마우스 커서를 '손' 모양으로
   on: {
     init(swiper) {
       updateBtn1(swiper);
