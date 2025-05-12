@@ -317,11 +317,22 @@ header .nav .search.on a img:nth-child(2) {
   position: absolute;
   top: 70%;
   left: 0;
+  width: 0;
+  height: 4px;
+  background: #d6eff8;
+  opacity: 0.8;
+  animation: ani 0.5s linear;
+  transition: 0.5s;
+}
+.con2 a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 75%;
   width: 100%;
   height: 4px;
   background: #d6eff8;
-  opacity: 0.7;
-  transition: 0.5;
+  opacity: 0.8;
 }
 
 .con3 {
